@@ -1,0 +1,61 @@
+@startuml
+
+class DataFrame{
+-headerNames: String[]
+-nomOfRows: int
+allData: double[][]
++DateFrame(filename: String)
++getNumOfRows(): int
++getNumOfCols(): int
++getHeaderNames(): String 
++getColumnByIndex(col: int): DataSeries
++toString(): String
+}
+
+class DataSeries{
+-label: String
+-data: double[]
+-count: int
++DataSEries(label: String)
++add(val: double): void
++size(): int
++getMin(): double
++getMax(): double
++getSum(): double
++getMean(): double
++toString(): String
+}
+
+
+class interactiveCLI{
+-reader Scanner
++InteractiveCLI()
++getKeyboardInteger(): int
++getKeyboardString(): String
++prompt(s: String): void
++display(s: String): void
+
+}
+
+class DataAnalysisCLI{
++DataAnalysisCLI()
++run(): void
+{Static}main(args: String[]): void
+}
+
+interface IBasicStats{
+getMin(): double
+getMax(): double
+getSum(): double
+getMean(): double
+
+}
+
+
+DataAnalysisCLI --> interactiveCLI : cli
+DataAnalysisCLI --> DataFrame : has-a
+DataSeries --|> IBasicStats
+DataFrame --> DataSeries : uses
+
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+class BankCD{
+~principal: double
+~rate: double
+~years: double
++BankCD(x: double, y: double, z double)
++calcYearly(): double
++calcDaily():double
+
+}
+class InteractiveCLI{
+-reader: Scanner
++interactiveCLI()
++getKeyboardInteger(): int
++getKeyboardDouble(): double
++promp(s: String): void
+display(s: String) void
+
+}
+
+class BankCDApp{
++BankCDApp()
++run(): void
++main(args:String[]): void
+}
+
+BankCDApp --> BankCD : bank
+BankCDApp --> InteractiveCLI : cli
+
+
+@enduml

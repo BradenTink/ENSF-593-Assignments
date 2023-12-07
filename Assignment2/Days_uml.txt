@@ -1,0 +1,24 @@
+@startuml
+
+interface interface
+
+class MonthGUI{
+-inputField: JTextField
+-display: JTextArea
++MonthHUI(title: String)
++actionPerformaned(ae: ActionEvent): void
++main(args: String[]) void
+}
+
+class Days{
+~howManyDaysInMonth(number: int): int
+-Days()
+}
+
+
+
+MonthGUI ..|> interface 
+
+
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class temperature {
+~degrees: double 
+
++publicTemperature(degrees: double)
+~public getFahrenheit(): double
+~public getCelsius(): double
++public Main(Args: String[]): void 
+
+
+}
+@enduml
+
+

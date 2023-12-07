@@ -1,0 +1,77 @@
+@startuml
+
+class Shape2D{
+-width: double
+-height: double
++Shape2D()
++Shape2D(w: double, h: double)
++getWidth(): double
++setWidth(w: double): void
++getHeight(): double
++setHeight(h: double): void
++toString(): String
++{abstract} getCircumference(): double
++{abstract} getArea(): double
+}
+
+class RightTriangle{
++RightTriangle(w: double, h: double)
++getCircumference(): double
++getArea(): double
+}
+
+class Square{
++Sqaure(w: double)
++setWidth(w: double): void
++setHeight(w: double): void
++getCircumference(): double
++getArea(): double
+}
+
+class Rectangle{
+~P2: Point2D
++Rectangle()
++Rectangle(w: double, h: double)
++getCircumference(): double
++getArea(): double
+setReferencePoint(p: Point2D): void
+}
+
+class Point2D{
+#x: double
+#y: double
+~Point2D()
+~Point2D(p: Point2D)
+~Point2D(x: double, y double)
++toString(): String
++equals(o Object): boolean
+}
+interface IShapePoints{
+getReferencePoint(): Point2D
+setReferencePoint(p: Point2D): void
+getAllShapePoints(): Point2d[]
+}
+class TestShapes{
++{Static}printShpaeInfo(s: Shape2D): void
++{Static}printPointInformation(shape: IShapePoints): void
++{Static}printReferencePointChnageTest(shape: IShapePoints): void
++{Static}printReferencePointGetTest(shape: IShapePoints): void
++{Static}printReferencePointSetTest(shape: IShapePoints): void
++{Static}printSquareWidthTest(s: Shape2D): void
++{Static}main(args: String[]: void
+
+}
+RightTriangle --> Shape2D : is-a
+Square --> Shape2D : is-a
+Rectangle --> Shape2D : is-a
+Rectangle --|> IShapePoints
+Rectangle --> Point2D: getAllShapePoints()
+Rectangle --> Point2D: P2
+Rectangle --> Point2D: getReferencePoint()
+IShapePoints --> Point2D: getAllShapePoints()
+IShapePoints --> Point2D: getReferencePoint()
+TestShapes --> Rectangle: has-a
+TestShapes --> Square: has-a
+TestShapes --> RightTriangle: has-a
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class tile {
+~letter: char
+~value: int 
+~resultStr: String  
+~bRet: boolean
++public Tile(letter: char, value: int)
++public toString(): String 
+~public equals(TileX: Tile) boolean
++public Main(Args: String[]): void 
+
+
+}
+@enduml
+

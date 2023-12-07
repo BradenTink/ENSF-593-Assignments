@@ -1,0 +1,34 @@
+@startuml
+
+class NewtonApp{
+-cli: InteractiveCLI
+
++NewtonApp():
++run(): void
++main(args:String[]): void
+}
+
+class NewtonSolver{
+~N: double 
+~maxerror: double 
+~guess: double
+~nIter: int 
++NewtonSolver(double x, double y double z)
++sqrt(): double
+ 
+}
+
+class IneractiveCLI{
+-reader: Scanner
++InteractiveCLI():
++getKeyboardInteger(): int
++getKeyboardDouble(): double
++prompt(String s): void
++display(String s): void
+
+
+}
+NewtonApp --> NewtonSolver : has-a
+NewtonApp --> IneractiveCLI : uses
+
+@enduml

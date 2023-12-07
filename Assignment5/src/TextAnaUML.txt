@@ -1,0 +1,27 @@
+@startuml
+
+class TextAnalysisGUI{
+-display: JTextArea
+-results: JTextArea
+-reset: JButton
+-displayStats: JButton
++TextAnalysisGUI(title: String)
++actionPerformed(e: ActionEvent): void
++{Static}main(args: String[]): void
+}
+
+class TextAnalyzer{
+-numberOfSenences: int
+-numOfWords: int
+~TextAnalyzer(sentence: String)
++toString(): String
+}
+interface ActionListener{
+
+}
+
+
+TextAnalysisGUI --> TextAnalyzer: has-a
+TextAnalysisGUI --|> ActionListener
+
+@enduml
